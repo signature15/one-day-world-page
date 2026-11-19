@@ -1,42 +1,30 @@
 import { join } from 'node:path';
 /**
- * one-day-world-page — entrypoint for make.fun's news-image contest
- * (news-image-20261118).
+ * one-day-world-page — entrypoint for make.fun's news-image-20261118 contest.
  *
- * WHAT IT DOES
+ * The artifact this program publishes is entry.png, a cream broadsheet that
+ * compresses Thursday 19 November 2026 onto a single page. A date tab anchors
+ * the masthead, and directly under it a day-in-numbers strip carries 8 stats —
+ * among them the ICJ's 9-6 vote, Anthropic's 81bn IPO valuation, and the
+ * Kumamoto M5.7 quake. Below the strip, three hero cards lead the page: the
+ * Shenzhen trilateral summit, the ICJ's Myanmar genocide ruling, and
+ * Anthropic's Nasdaq debut. Five secondary cards and seven tertiary cards
+ * widen the day's coverage beneath the heroes, and a bank of 24 evening
+ * briefs, each tagged with its region, rounds the page off before a
+ * date-check footer that lets a reader confirm the edition day at a glance.
  *
- * The whole program is one step: copy `entry.png` from the repository root
- * into the output directory, under the same name. The poster — a 30-story
- * broadsheet of the world's news of Wednesday 18 November 2026 across 7 regions,
- * with a numbers strip and news sources footer — is finished before this script
- * ever runs; nothing is generated, re-rendered, or transformed here.
- *
- * DETERMINISM
- *
- * Two runs write identical bytes, which a grader can confirm by hashing the
- * output after each run. The copy transfers a version-controlled file
- * unchanged, and nothing else can leak into the result: no timestamps, no
- * randomness, no locale or timezone state.
- *
- * WHY NO NETWORK
- *
- * Everything the program touches is already on local disk — the image ships
- * in the repository — so fetching or uploading would only add failure modes
- * and non-determinism. There are no network calls at all.
- *
- * WHERE THE IMAGE GOES
- *
- * Inside the grading container the output directory is the fixed path
- * `/output`. Outside it, the environment variable MAKEFUN_OUTPUT_DIR names
- * the output directory instead, so the same script runs unchanged on a dev
- * machine:
+ * The program's only job is to copy entry.png, byte for byte, into the output
+ * directory: /output inside the grading container, or the path named by the
+ * MAKEFUN_OUTPUT_DIR environment variable anywhere else. Two runs write
+ * identical bytes — the copy transfers a version-controlled file unchanged,
+ * and nothing can leak into the result: no timestamps, no randomness, no
+ * locale or timezone state, no network calls. The source is resolved relative
+ * to this file (import.meta.url), not the current working directory, so the
+ * command works from any cwd as long as the checkout is intact:
  *
  *   MAKEFUN_OUTPUT_DIR=./out node main.ts
  *
- * The source is resolved relative to this file (import.meta.url), not the
- * current working directory, so the command works from any cwd as long as
- * the checkout is intact. The destination directory must already exist;
- * this script does not create it. Node 22, Node standard library only.
+ * Node 22, Node standard library only.
  */
 
 import { copyFileSync } from 'node:fs';

@@ -2,7 +2,7 @@
 [![rank](https://make.fun/badge/news-image-20261118/signature15/one-day-world-page/rank.svg)](https://make.fun/bounty/news-image-20261118/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261118)
 [![reward](https://make.fun/badge/news-image-20261118/signature15/one-day-world-page/reward.svg)](https://make.fun/bounty/news-image-20261118?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261118)
 
-# one-day-world-page
+# One Day in World News - Thursday 19 November 2026
 
 One day of world news, one page. This is an entry for make.fun's
 [news-image contest](https://make.fun/bounty/news-image-20261118), which asked
