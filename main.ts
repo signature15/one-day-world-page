@@ -1,3 +1,4 @@
+import { join } from 'node:path';
 /**
  * one-day-world-page — entrypoint for make.fun's news-image contest
  * (news-image-20261118).
@@ -39,8 +40,6 @@
  */
 
 import { copyFileSync } from 'node:fs';
-import { join } from 'node:path';
-
 const source = new URL('./entry.png', import.meta.url);
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
