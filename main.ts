@@ -1,13 +1,14 @@
 /**
  * one-day-world-page — entrypoint for make.fun's news-image contest
- * (news-image-20261117).
+ * (news-image-20261118).
  *
  * WHAT IT DOES
  *
  * The whole program is one step: copy `entry.png` from the repository root
- * into the output directory, under the same name. The poster — a front page
- * of the world's news of Tuesday 17 November 2026 — is finished before this
- * script ever runs; nothing is generated, re-rendered, or transformed here.
+ * into the output directory, under the same name. The poster — a 30-story
+ * broadsheet of the world's news of Wednesday 18 November 2026 across 7 regions,
+ * with a numbers strip and news sources footer — is finished before this script
+ * ever runs; nothing is generated, re-rendered, or transformed here.
  *
  * DETERMINISM
  *
